@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./Components/Header/Navbar/index";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Home";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
+import MyLib from "./Components/MyLib";
+import Sidebar from "./Components/Sidebar";
+import Footer from "./Components/Footer";
+import Categories from "./Components/Categories";
+import BookDetails from "./Components/Books/BookList/BookDetail";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className=" bg-bgPrimary  ">
+      <div className="flex container mx-auto">
+        <Sidebar />
+
+        <section className="ml-[317px] w-5/6">
+          <div className="  p-12">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/categories" element={<Categories />} />
+              <Route path="/book/:bookId" element={<BookDetails />} />
+              <Route path="/profile/my-library" element={<MyLib />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile/logout" element={<MyLib />} />
+            </Routes>
+          </div>
+          <div className="p-12">
+            <Footer />
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
 
