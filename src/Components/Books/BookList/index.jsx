@@ -42,7 +42,7 @@ const BookList = () => {
                         </div>
                       </dl>
 
-                      <div class="mt-6 flex items-center gap-8 text-xs">
+                      <div class="mt-2 flex items-center gap-8 text-xs">
                         <div class="sm:inline-flex sm:shrink-0 sm:items-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,7 @@ const BookList = () => {
                         </div>
                       </dl>
 
-                      <div class="mt-6 flex items-center gap-8 text-xs">
+                      <div class="mt-2 flex items-center gap-8 text-xs">
                         <div class="sm:inline-flex sm:shrink-0 sm:items-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

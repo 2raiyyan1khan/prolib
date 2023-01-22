@@ -17,7 +17,7 @@ const Sidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   console.log('location.pathname === "/"', `${location.pathname === "/"}`);
   return (
-    <div class="flex flex-col justify-between h-screen bg-bgSecondary shadow-lg  w-1/6 fixed">
+    <>
       <div class="px-4 py-6">
         <Link to={"/"} className="">
           <span class=" w-32 h-10 bg-mainOffPrimary text-textPrimary shadow-lg rounded-lg flex justify-center items-center font-bold text-3xl">
@@ -26,8 +26,8 @@ const Sidebar = () => {
         </Link>
 
         <nav aria-label="Main Nav" class="flex flex-col mt-6 space-y-2">
-          <div class="relative bg-mainOffPrimary rounded-lg mb-5  focus:border-mainPrimary">
-            <span class="pointer-events-none absolute inset-y-0 left-0 grid w-10 place-content-center text-gray-500">
+          <div class="relative bg-mainOffPrimary rounded-lg mb-5  focus:border-mainPrimary ">
+            <span class="pointer-events-none absolute   border-r-4 border-bgSecondary  inset-y-0 left-0 grid w-10 place-content-center text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -48,23 +48,23 @@ const Sidebar = () => {
               type="email"
               id="UserEmail"
               placeholder="Search"
-              class="w-full h-full px-4 py-2 text-textPrimary outline-none outline-offset-2 outline-transparent focus:outline-mainPrimary rounded-lg bg-mainOffPrimary border-0  pl-10 shadow-md sm:text-sm  "
+              class="w-full h-full   px-4 py-2 text-textPrimary outline-none outline-offset-2 outline-transparent focus:outline-mainPrimary rounded-lg bg-mainOffPrimary border-0  pl-12 shadow-md sm:text-sm  "
+            />
+          </div>
+          <div className=" px-4 bg-mainOffPrimary rounded-lg shadow-md">
+            <NavLink
+              to={"/"}
+              active={location.pathname === "/"}
+              title={"Home"}
+              icon={<HomeIcon />}
+              className=""
             />
           </div>
 
-          <NavLink
-            to={"/"}
-            active={location.pathname === "/"}
-            title={"Home"}
-            icon={<HomeIcon />}
-          />
-          <details class="group [&_summary::-webkit-details-marker]:hidden bg-mainOffPrimary">
+          <details class="group [&_summary::-webkit-details-marker]:hidden bg-mainOffPrimary rounded-lg shadow-md">
             <summary
-              className={`flex items-center px-4 py-2 border-l-[3px]  rounded  ${
-                location.pathname === "/categories"
-                  ? ` border-mainPrimary text-textPrimary  `
-                  : "text-textSecondary border-transparent"
-              }  hover:border-mainPrimary hover:bg-mainOffPrimary hover:text-textPrimary`}
+              className={`flex items-center px-4 py-2  rounded text-textSecondary
+              hover:text-textPrimary`}
               onClick={() =>
                 searchParams.get("category") ? null : navigate("/categories")
               }
@@ -110,52 +110,52 @@ const Sidebar = () => {
               </span>
             </summary>
 
-            <nav
-              aria-label="Categories Nav"
-              class="mt-1.5 p-4 flex flex-col  space-y-2 pb-4"
-            >
-              <NavLink
-                to={"/categories?category=All"}
-                active={
-                  location.pathname + location.search ===
-                  "/categories?category=All"
-                }
-                title={"All"}
-              />
-              <NavLink
-                to={"/categories?category=Life"}
-                active={
-                  location.pathname + location.search ===
-                  "/categories?category=Life"
-                }
-                title={"Life"}
-              />
-              <NavLink
-                to={"/categories?category=Technology"}
-                active={
-                  location.pathname + location.search ===
-                  "/categories?category=Technology"
-                }
-                title={"Technology"}
-              />
+            <nav aria-label="Categories Nav" class="mt-1.5  flex flex-col  ">
+              <div className="border-t-4 border-bgSecondary px-4">
+                <NavLink
+                  to={"/categories?category=All"}
+                  active={
+                    location.pathname + location.search ===
+                    "/categories?category=All"
+                  }
+                  title={"All"}
+                />
+              </div>
+              <div className="border-t-4 border-bgSecondary px-4">
+                <NavLink
+                  to={"/categories?category=Life"}
+                  active={
+                    location.pathname + location.search ===
+                    "/categories?category=Life"
+                  }
+                  title={"Life"}
+                />
+              </div>
+              <div className="border-t-4 border-bgSecondary px-4">
+                <NavLink
+                  to={"/categories?category=Technology"}
+                  active={
+                    location.pathname + location.search ===
+                    "/categories?category=Technology"
+                  }
+                  title={"Technology"}
+                />
+              </div>
             </nav>
           </details>
         </nav>
       </div>
 
-      <div class="sticky inset-x-0 bottom-0  shadow-md px-4 mb-4">
-        <details class="group [&_summary::-webkit-details-marker]:hidden  bg-mainOffPrimary ">
+      <div class="sticky inset-x-0 bottom-0  shadow-lg px-4 pb-4">
+        <details class="group [&_summary::-webkit-details-marker]:hidden  bg-mainOffPrimary rounded-lg shadow-md">
           <summary
             onClick={() =>
               location.pathname.includes("/profile")
                 ? null
                 : navigate("/profile/my-library")
             }
-            className={`flex items-center px-4 py-2 border-l-[3px]  rounded  ${
-              location.pathname.includes("/profile")
-                ? ` border-mainPrimary text-textPrimary bg-mainOffPrimary  `
-                : "text-textSecondary border-transparent"
-            }  hover:border-mainPrimary hover:bg-mainOffPrimary hover:text-textPrimary`}
+            className={`flex items-center px-4 py-2   rounded-lg text-textSecondary 
+               hover:bg-mainOffPrimary hover:text-textPrimary`}
           >
             <img
               alt="Man"
@@ -186,26 +186,27 @@ const Sidebar = () => {
             </span>
           </summary>
 
-          <nav
-            aria-label="Account Nav"
-            class="mt-1.5 p-4 flex flex-col space-y-2"
-          >
-            <NavLink
-              to={"/profile/my-library"}
-              active={location.pathname === "/profile/my-library"}
-              title={"My library"}
-              icon={<LibraryIcon />}
-            />
-            <NavLink
-              to={"/profile/logout"}
-              active={location.pathname === "/profile/logout"}
-              title={"Log out"}
-              icon={<HomeIcon />}
-            />
+          <nav aria-label="Account Nav" class="mt-1.5   flex flex-col  ">
+            <div className="border-y-4 border-bgSecondary px-4">
+              <NavLink
+                to={"/profile/my-library"}
+                active={location.pathname === "/profile/my-library"}
+                title={"My library"}
+                // icon={<LibraryIcon />}
+              />
+            </div>
+            <div className=" px-4">
+              <NavLink
+                to={"/profile/logout"}
+                active={location.pathname === "/profile/logout"}
+                title={"Log out"}
+                // icon={<HomeIcon />}
+              />
+            </div>
           </nav>
         </details>
       </div>
-    </div>
+    </>
   );
 };
 

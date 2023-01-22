@@ -5,11 +5,11 @@ const NavLinkComponent = ({ active, title, to, className, icon }) => {
   return (
     <NavLink
       to={to}
-      className={`flex items-center p-2 border-l-[3px]  rounded  ${
+      className={`flex items-center p-2 border-l-[3px]  ${
         active
-          ? ` border-mainPrimary text-textPrimary  bg-bgSecondary`
+          ? ` border-mainPrimary text-textPrimary  `
           : "text-textSecondary border-transparent"
-      }  hover:border-mainPrimary hover:bg-bgSecondary hover:text-textPrimary ${className}`}
+      }  hover:border-mainPrimary  hover:text-textPrimary ${className}`}
     >
       {icon && icon}
       <span class="ml-3 text-sm font-medium"> {title} </span>
