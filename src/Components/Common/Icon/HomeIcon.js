@@ -3,7 +3,7 @@ import React from "react";
 const HomeIcon = () => {
   return (
     <svg
-      class="w-5 h-5 opacity-75"
+      class="w-5 h-5 opacity-75 dark:text-gray-400 "
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

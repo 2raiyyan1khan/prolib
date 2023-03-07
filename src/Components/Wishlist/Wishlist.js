@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MyLib = () => {
+function Wishlist() {
   return (
-    <div className="container mx-auto  px-0">
-      <div>
-        <h3 className="text-title text-2xl font-semibold mb-8 text-textPrimary">
-          My Library
-        </h3>
+    <div className="">
+      <div className="mb-8">
+        <h2 className="text-xl font-medium text-textPrimary ">My Wishlist</h2>
       </div>
       <div className="grid grid-cols-4  grid-flow-row gap-5 col-span-3 gap-y-8">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el, i) => {
@@ -99,6 +97,6 @@ const MyLib = () => {
       </div>
     </div>
   );
-};
+}
 
-export default MyLib;
+export default Wishlist;

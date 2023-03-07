@@ -4,7 +4,7 @@ const index = () => {
   return (
     <footer
       aria-label="Site Footer"
-      class="bg-bgSecondary mx-auto shadow-lg rounded-lg"
+      class="bg-bgSecondary mx-auto shadow-sm rounded-lg"
     >
       <div class="mx-auto max-w-screen-xl  px-4  sm:px-6 lg:px-8">
         {/* <div class="mx-auto max-w-md ">

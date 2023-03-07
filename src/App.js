@@ -1,21 +1,22 @@
-import "./App.css";
-import Navbar from "./Components/Header/Navbar/index";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Components/Home";
+import "./App.css";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
-import MyLib from "./Components/MyLib";
-import Sidebar from "./Components/Sidebar";
-import Footer from "./Components/Footer";
-import Categories from "./Components/Categories";
 import BookDetails from "./Components/Books/BookList/BookDetail";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Categories from "./Components/Categories";
+import Footer from "./Components/Footer";
+import Home from "./Components/Home";
+import MyLib from "./Components/MyLib";
 import Reader from "./Components/MyLib/ReadBook";
+import Search from "./Components/Search/Search";
+import Sidebar from "./Components/Sidebar";
+import Wishlist from "./Components/Wishlist/Wishlist";
 function App() {
   return (
-    <main className=" bg-bgPrimary  ">
+    <main className=" bg-bgPrimary  relative">
       <div className="flex  w-full">
-        <div class="flex flex-col justify-between h-screen bg-bgSecondary shadow-lg w-1/5  fixed">
+        <div class="flex flex-col justify-between h-screen bg-bgSecondary shadow-sm w-1/5  fixed">
           <Sidebar />
         </div>
 
@@ -23,6 +24,8 @@ function App() {
           <div className="  p-12">
             <Routes>
               <Route exact path="/" element={<Home />} />
+              <Route exact path="/search" element={<Search />} />
+              <Route exact path="/wishlist" element={<Wishlist />} />
               <Route exact path="/categories" element={<Categories />} />
               <Route
                 exact

@@ -30,7 +30,7 @@ const Reader = () => {
       </Document>
 
       <div className="flex justify-end items-center  ">
-        <div class=" mt-4 inline-flex  items-center justify-center gap-3 rounded-lg bg-bgPrimary px-3  shadow-lg">
+        <div class=" mt-4 inline-flex  items-center justify-center gap-3 rounded-lg bg-bgPrimary px-3  shadow-sm">
           <div className="border-r-4 border-mainOffPrimary py-1">
             <button
               onClick={() =>

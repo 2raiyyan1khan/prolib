@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ListHeader from "../../Common/ListHeader";
-import Sidebar from "../../Sidebar";
 
 const BookList = () => {
   return (
@@ -19,26 +17,33 @@ const BookList = () => {
               return (
                 <div
                   key={i}
-                  className="bg-mainOffPrimary rounded-lg  p-4 shadow-lg cursor-pointer group hover:scale-110 hover:z-20 transition-all ease-linear duration-500"
+                  className="bg-mainOffPrimary rounded-lg   shadow-sm cursor-pointer group hover:scale-110 hover:z-20 transition-all ease-linear duration-500"
                 >
                   <Link to={"/book/20"} class="block ">
                     <img
                       alt="Home"
                       src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                      class="h-56 w-full rounded-lg object-cover"
+                      class="h-56 w-full  rounded-t-lg object-cover"
                     />
 
-                    <div class="mt-2">
+                    <div class=" p-4">
                       <dl>
+                        <div>
+                          <dt class="sr-only">Price</dt>
+
+                          <dd class="text-xs tracking-wider text-gray-400 shadow-md uppercase  ">
+                            <span className="bg-mainOffPrimary block w-20">
+                              Category
+                            </span>
+                          </dd>
+                        </div>
+
                         <div>
                           <dt class="sr-only">Address</dt>
 
                           <dd class="font-medium text-textPrimary">
                             123 Wallaby Avenue, Park Road
                           </dd>
-                          <p className="text-textSecondary text-sm opacity-70">
-                            category
-                          </p>
                         </div>
                       </dl>
 
@@ -111,16 +116,16 @@ const BookList = () => {
               return (
                 <div
                   key={i}
-                  className="bg-mainOffPrimary rounded-lg  p-4 shadow-lg cursor-pointer group hover:scale-110 hover:z-20 transition-all ease-linear duration-500"
+                  className="bg-mainOffPrimary rounded-lg   shadow-sm cursor-pointer group hover:scale-110 hover:z-20 transition-all ease-linear duration-500"
                 >
                   <Link to={"/book/20"} class="block ">
                     <img
                       alt="Home"
                       src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                      class="h-56 w-full rounded-lg object-cover"
+                      class="h-56 w-full  rounded-t-lg object-cover"
                     />
 
-                    <div class="mt-2">
+                    <div class=" p-4">
                       <dl>
                         <div>
                           <dt class="sr-only">Price</dt>

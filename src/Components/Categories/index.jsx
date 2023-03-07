@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-
+import CategoryList from "../CategoryList/CategoryList";
+import Bar from "../Common/Icon/Bar";
+import Modal from "./Modal";
 const Categories = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [showCategories, setShowCategories] = useState(false);
   useEffect(() => {
     if (searchParams.get("category")) {
     } else {
@@ -10,9 +13,20 @@ const Categories = () => {
       setSearchParams(searchParams);
     }
   }, []);
+
   return (
-    <div>
-      <section className="flex gap-6">
+    <div className="">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-medium text-textPrimary "> Categories</h2>
+        <button
+          onClick={() => setShowCategories(!showCategories)}
+          className="hover:cursor-pointer rounded-lg   p-2 shadow-sm hover:shadow-lg hover:ring-violet-400 hover:ring-1"
+        >
+          <Bar />
+        </button>
+      </div>
+
+      <section className="flex gap-6 mt-14">
         <article className="relative w-full">
           <img
             className="blur-2xl overflow-clip   opacity-70  transition-opacity duration-300  w-1/4 h-44 "
@@ -26,8 +40,8 @@ const Categories = () => {
               class="object-cover w-48 h-44 aspect-square rounded-xl"
             />
             <article className="pt-3">
-              <strong class="rounded-lg bg-mainPrimary bg-opacity-25 text-textPrimary shadow-md px-3 py-0.5 uppercase text-xs font-medium tracking-wider ">
-                Category
+              <strong class="text-mainPrimary uppercase text-xs font-medium tracking-wider ">
+                ALL
               </strong>
               <div class="flex justify-between">
                 <div class="max-w-[35ch]">
@@ -58,7 +72,7 @@ const Categories = () => {
         </article>
       </section>
       <div class="overflow-x-auto pt-16 min-h-screen">
-        <table class="min-w-full text-sm divide-y-2 overflow-hidden  divide-mainPrimary bg-mainOffPrimary rounded-lg shadow-lg">
+        <table class="min-w-full text-sm divide-y-2 overflow-hidden  divide-mainPrimary bg-mainOffPrimary rounded-lg shadow-sm">
           <thead className="">
             <tr>
               <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-textPrimary w-14 ">
@@ -476,7 +490,7 @@ const Categories = () => {
         </table>
         {/* Pagination */}
         <div className="flex justify-end items-center  ">
-          <div class=" mt-4 inline-flex  items-center justify-center gap-3 rounded-lg bg-mainOffPrimary px-3  shadow-lg">
+          <div class=" mt-4 inline-flex  items-center justify-center gap-3 rounded-lg bg-mainOffPrimary px-3  shadow-sm">
             <div className="border-r-4 border-bgPrimary py-1">
               <a
                 href="#"
@@ -524,6 +538,12 @@ const Categories = () => {
           </div>
         </div>
       </div>
+      <Modal
+        handleClose={() => setShowCategories(!showCategories)}
+        isOpen={showCategories}
+      >
+        <CategoryList />
+      </Modal>
     </div>
   );
 };

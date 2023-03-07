@@ -24,7 +24,7 @@ const Input = ({
             name={name}
             onChange={onChange}
             class={`
-              w-full h-full pl-4 py-3 text-textPrimary outline-none text-lg tracking-wider  outline-offset-2 outline-transparent focus:outline-mainPrimary rounded-lg bg-bgSecondary border-0  pr-10  sm:text-sm  mt-2 ${
+              w-full h-full pl-4 py-3 text-textPrimary  focus:outline-none  focus:ring-1 focus:ring-opacity-75 focus:ring-violet-400 text-lg tracking-wider   rounded-lg bg-bgPrimary border-0  pr-10  sm:text-sm  mt-2 ${
                 className || ""
               }`}
             placeholder={placeholder}

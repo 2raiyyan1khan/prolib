@@ -1,12 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <main className="flex ">
       <div className=" w-5/6  p-16"></div>
     </main>
-    // <div className="bg-base-300 shadow-lg">
+    // <div className="bg-base-300 shadow-sm">
     //   <div className="container mx-auto navbar ">
     //     <div className="navbar-start">
     //       <Link to={"/"} className="btn btn-ghost normal-case text-xl">
