@@ -4,11 +4,10 @@ import Hero from "../Header/Hero";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Hero />
-
       <BookList />
-    </>
+    </div>
   );
 };
 

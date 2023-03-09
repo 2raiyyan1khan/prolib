@@ -47,7 +47,7 @@ function Modal({ children, handleClose, isOpen }) {
       >
         <div
           onClick={handleClose}
-          className="fixed h-screen overflow-hidden top-0 right-0 left-0 bottom-0 flex justify-center items-center bg-gray-900 bg-opacity-95"
+          className="fixed h-screen min-w-max overflow-hidden top-0 right-0 left-0 bottom-0 flex justify-center items-center bg-gray-900 bg-opacity-95"
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
